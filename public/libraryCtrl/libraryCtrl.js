@@ -3,9 +3,6 @@ var app = angular.module('wwhApp');
 app.controller('libraryCtrl', function($scope, booksRef){
     
 	$scope.books = booksRef
-	// $scope.books.$loaded().then(function (books) {
-
- //  });
 
 	$scope.addBook = function(title, author, ISBN){
 		$scope.threads.$add({
@@ -21,9 +18,20 @@ app.controller('libraryCtrl', function($scope, booksRef){
         filterText: ''
   };
 
+  $scope.clearFilter = function(){
+    $scope.filterOptions.filterText = '';
+  };
+
+  $scope.closeDetails = function(){
+    $scope.show = false;
+  }
+
   $scope.selected = [];
   $scope.gridOptions = { 
       data: 'books',
+      afterSelectionChange: function (row, event) {
+        $scope.show = true;
+      },
       enableColumnResize: true,
       selectedItems: $scope.selected,
       multiSelect: false,

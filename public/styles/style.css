@@ -1,4 +1,4 @@
-body { margin: 0px;}
+body { margin: 0;}
 body > #mainDiv {
 	display: flex;
 	flex-flow: row wrap;
@@ -88,7 +88,7 @@ body > #mainDiv > footer {
 	height: auto;
 	width: auto; 
 	padding: 5px; 
-	margin: 0px;
+	margin: 0;
 }
 .wheel {
 	max-width: 150px; 
@@ -124,6 +124,20 @@ body > #mainDiv > footer {
     height: 400px;
     color: #991414;
     font-size: 12px;
+}
+.spacer {
+	flex-grow: 1;
+}
+.bookInfo {
+	font-size: 18px;
+	margin: 10px;
+}
+.bookData {
+	font-size: 20px;
+	background-color: white;
+	border: 1px solid black;
+	margin: 3px;
+	padding: 5px;
 }
 #slide {
 	width: 350px;
@@ -171,9 +185,38 @@ body > #mainDiv > footer {
 	width: auto;
 	height: 300px;
 }
-.spacer {
-	flex-grow: 1;
-}
+
 #bottomAside {
 	width: 300px;
+}
+#clearFilter {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+	background-color: #1B014B;
+	border-radius: 30px;
+	cursor: pointer;
+}
+#book {
+	position: relative;
+	top: 0;
+	left: 0;
+	border: 1px solid #991414;
+}
+#bookDetailsTitle {
+	text-align: center;
+	font-size: 30px;
+	margin: 0;
+}
+#bookDetails {
+	margin: 5px;
+}
+
+#closeDetails {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+	background-color: #1B014B;
+	border-radius: 30px;
+	cursor: pointer;
+	margin: 10px;
+	padding: 5px;
 }
