@@ -2,6 +2,7 @@ var Book = require('../dbModels/Book');
 
 module.exports = {
   create: function(req, res) {
+    console.log(121213213, req.body)
     var newBook = new Book(req.body);
     newBook.save( function(err, result) {
       if (err) return res.status(500).json(err);

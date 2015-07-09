@@ -24,11 +24,11 @@ app.service('bookService', function($http, $q){
   		});
 	};
 
-	this.updateBook = function(book){
+	this.updateBook = function(newBook){
 		return $http({
 		    method: 'PUT',
-		    url: 'http://localhost:2015/library/' + product._id,
-		    data: book
+		    url: 'http://localhost:2015/library/' + newBook._id,
+		    data: newBook
 	  	});
  	};
 

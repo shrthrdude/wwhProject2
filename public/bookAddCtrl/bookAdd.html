@@ -1,0 +1,23 @@
+<div>
+	<p>Add Book</p>
+	<form>
+		Title:
+		<input type="text" ng-model="book.book" name="title" value="" maxlength="100" />
+		<br />
+		Author:
+		<input type="text" ng-model="book.author" name="author" value="" maxlength="100" />
+		<br>
+		ISBN#:
+		<input type="text" ng-model="book.ISBN" name="isbn" value="" maxlength="30" />
+		<br>
+		Summary:
+		<input type="text" ng-model="book.summary" name="summary" value=""
+		maxlength="500" />
+		<br>
+		<input type="submit" ng-click="postBook(book)" value="Submit" />
+	</form>
+	<button id="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
+	<button id="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
+	<button id="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
+	<button id="home" onclick="bookButtons('home')">Home</button>
+</div>

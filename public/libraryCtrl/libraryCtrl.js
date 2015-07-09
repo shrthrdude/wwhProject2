@@ -4,16 +4,6 @@ app.controller('libraryCtrl', function($scope, booksRef){
     
 	$scope.books = booksRef
 
-	$scope.addBook = function(title, author, ISBN){
-		$scope.threads.$add({
-			book: title,
-			author: author,
-			ISBN: ISBN
-		})
-	}
-
-
-
 	$scope.filterOptions = {
         filterText: ''
   };
