@@ -18,6 +18,7 @@ app.controller('bookDeleteCtrl', function($scope, booksRef, bookService){
 	  }, function(err){
 	    console.log(err);
 	  })
+    $('#deleteForm').trigger("reset");
 	};
 
 	$scope.filterOptions = {

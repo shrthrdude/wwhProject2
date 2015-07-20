@@ -49,14 +49,28 @@
 	<div ng-hide="show"></div>
 	<div id="book" ng-show="show">
 		<p id="bookDetailsTitle">Book Details</p>
-		<div id="bookDetails">
-			<div class="bookInfo">Book: </div><div class="bookData">{{selected[0].book}}</div>
-			<div class="bookInfo">Author(s): </div><div class="bookData">{{selected[0].author}}</div>
-			<div class="bookInfo">ISBN# </div><div class="bookData">{{selected[0].ISBN}}</div>
-			<div class="bookInfo">Summary: </div><div class="bookData">{{selected[0].summary}}</div>
-		</div>
-		<button id="closeDetails" ng-click="closeDetails()">Close Details</button>
+		<form id="bookDetails">
+			<div class="bookInfo">ID: </div>
+			<div ng-model="reserve.id" class="bookData">{{selected[0]._id}}</div>
+			<div class="bookInfo">Book: </div>
+			<div ng-model="reserve.book" name="title" class="bookData"> {{selected[0].book}} </div>
+			<div class="bookInfo">Author(s): </div>
+			<div ng-model="reserve.author" class="bookData">{{selected[0].author}}</div>
+			<div class="bookInfo">ISBN# </div>
+			<div ng-model="reserve.ISBN" class="bookData">{{selected[0].ISBN}}</div>
+			<div class="bookInfo">Summary: </div>
+			<div ng-model="reserve.summary" class="bookData">{{selected[0].summary}}</div>
+			<div class="bookInfo">Reserved: </div>
+			<div ng-model="reserve.reserve" class="bookData">{{selected[0].reserve}}</div>
+			<div class="bookInfo">Checkout Name: </div>
+			<input ng-model="reserve.chkName" class="bookData" ng-disabled="disableReserve" type="text" name="chkName" value={{selected[0].chkName}} />
+			<div class="bookInfo">Checkout Email: </div>
+			<input ng-model="reserve.chkEmail" class="bookData" ng-disabled="disableReserve" type="text" name="chkEmail" value={{selected[0].chkEmail}} />
+			<br>
+			<br>
+			<button id="reserveBook" ng-disabled="disableReserve" ng-click="reserveBook(reserve)">Reserve Book</button>
+			<button id="closeDetails" ng-click="closeDetails()">Close Details</button>
+		</form>	
 	</div>
-
 	<div class="gridStyle" ng-grid="gridOptions"></div>
 </div>

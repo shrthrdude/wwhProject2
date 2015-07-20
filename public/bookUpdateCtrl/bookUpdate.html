@@ -1,31 +1,55 @@
 <div>
-	<p>Edit Book</p>
-	<form>
-		<div name = "id" ng-model="newBook._id">Book ID: {{selected[0]._id}}</div>
+	<p class="pageTitle">Edit Book and Checkout Control</p>
+	<form id="edittingForm" name="editBookForm">
+		<div class="editText" name = "id" ng-model="update._id">Book ID: </div>
+		<br>
+		<div class="editText">{{selected[0]._id}}</div>
 		<br />
-		Title:
-		<input type="text" name="title" ng-model="newBook.book" value= {{selected[0].book}} maxlength="100" />
-		<br />
-		Author:
-		<input type="text" name="author" ng-model="newBook.author" value={{selected[0].author}} maxlength="100" />
+		<span class="editText">Title:</span>
 		<br>
-		ISBN#:
-		<input type="text" name="isbn" ng-model="newBook.ISBN" value={{selected[0].ISBN}} maxlength="30" />
+		<textarea id="editTitle" rows="2" type="text" name="title" ng-model="update.book" value= {{selected[0].book}} maxlength="100">{{selected[0].book}}</textarea>
+		<br><br>
+		<span class="editText">Author:</span>
 		<br>
-		Summary:
-		<input type="text" name="summary" ng-model="newBook.summary" value={{selected[0].summary}}
-		maxlength="500" />
+		<textarea id="editAuthor" rows="2" type="text" name="author" ng-model="update.author" value={{selected[0].author}} maxlength="100">{{selected[0].author}}</textarea>
+		<br><br>
+		<span class="editText">ISBN#:</span>
 		<br>
-		<input type="submit" ng-click="updateBook(newBook)" value="Update" />
+		<textarea id="editISBN" rows="1" type="text" name="isbn" ng-model="update.ISBN" value={{selected[0].ISBN}} maxlength="30">{{selected[0].ISBN}}</textarea>
+		<br><br>
+		<span class="editText">Summary:</span>
+		<br>
+		<textarea id="editSummary" rows="4" type="text" name="summary" ng-model="update.summary" value={{selected[0].summary}}
+		maxlength="500">{{selected[0].summary}}</textarea>
+		<br><br>
+		<span class="editText">Checkout Name:</span>
+		<br>
+		<textarea id="editChkName" rows="1" type="text"  name="chkName" ng-model="update.chkName" value={{selected[0].chkName}}>value={{selected[0].chkName}}</textarea>
+		<br><br>
+		<span class="editText">Checkout Email:</span>
+		<br>
+		<textarea id="editChkEmail" rows="1" type="text"  name="chkEmail" ng-model="update.chkEmail" value={{selected[0].chkEmail}}>value={{selected[0].chkEmail}}</textarea>
+		<br><br>
+		<span class="editText">Reserved:</span>
+		<br>
+		<input type="radio" name="chkReserve" ng-checked="update.reserve" value="true">True
+		<input type="radio" name="chkReserve" ng-checked="!update.reserve" value="false">False
+		<br><br>
+		<span class="editText">Checked Out:</span>
+		<br>
+		<input type="radio" name="chkCheckout" ng-checked="update.chkCheckout" value="true">True
+		<input type="radio" name="chkCheckout" ng-checked="!update.chkCheckout" value="false">False
+		<br><br>
+		<input id="updateBtn" type="submit" ng-click="updateBook(update)" value="Update" />
 		<strong><p>To update a book use the filter to find the book you wish to edit, and then click on the book's row to select it.</p></strong>
 		<strong>Filter:</strong><input type="text" ng-model="filterOptions.filterText"/>
 		<button id="clearFilter" ng-click="clearFilter()">Clear Filter</button><br><br>
 	</form>
 
 	<div class="gridStyle" ng-grid="gridOptions"></div>
-
-	<button id="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
-	<button id="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
-	<button id="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
-	<button id="home" onclick="bookButtons('home')">Home</button>
+	<hr>
+	<button class="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
+	<button class="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
+	<button class="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
+	<button class="home" onclick="bookButtons('home')">Home</button>
 </div>

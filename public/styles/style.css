@@ -1,6 +1,8 @@
 body { margin: 0;}
 body > #mainDiv {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	flex-flow: row wrap;
 	min-width: 400px;
 	background-color: #FAF0BE;
@@ -15,6 +17,8 @@ body > #mainDiv > header {
 	order: 1;
 	height: 150px;
 	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 	flex-flow: column wrap;
 	justify-content: center;
 	align-content: center;
@@ -139,10 +143,122 @@ body > #mainDiv > footer {
 	border: 1px solid black;
 	margin: 3px;
 	padding: 5px;
+	width: 90%;
 }
 .btnLink {
 	color: white;
 	text-decoration: none;
+}
+.project {
+	border: 3px solid #991414;
+	padding: 5px;
+}
+.projCap {
+	font-size: 12px;
+	text-align: center;
+}
+.projTitle {
+	color: green;
+}
+.patterns {
+	border: 3px solid #991414;
+	height: 200px;
+	width: 400px;
+	background-color: white;
+}
+.guild {
+	border: 3px solid #991414;
+	text-decoration: none;
+	height: 30px;
+	width: 100%;
+	padding: 5px;
+}
+.guildText {
+	text-decoration: none;
+}
+.patternPDF {
+	vertical-align: top;
+}
+.newsletter {
+	text-align: center;
+}
+.memberForm {
+	border: 3px solid #991414;
+	font-size: 12px;
+	padding: 5px;
+}
+.memberLong {
+	width: 95%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.memberMedium {
+	width: 65%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.memberShort {
+	width: 30%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.maint {
+	font-family: Arial;
+	color: black;
+}
+.bookAdd {
+	background-color: #991414;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 10px;
+	height: 60px;
+	width: 150px;
+}
+.bookUpdate {
+	background-color: #991414;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 10px;
+	height: 60px;
+	width: 150px;
+}
+.bookDelete {
+	background-color: #991414;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 10px;
+	height: 60px;
+	width: 150px;
+}
+.home {
+	background-color: #991414;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 10px;
+	height: 60px;
+	width: 150px;
+}
+.pageTitle {
+	font-size: 30px;
+
+}
+.deleteData {
+	color: red;
+}
+.editText {
+	padding: 3px;
+}
+.footerLinks {
+	text-decoration: none;
+	color: #991414;
+}
+.fb {
+	color: #120A8F;
+	text-align: center;
 }
 #slide {
 	width: 350px;
@@ -190,9 +306,20 @@ body > #mainDiv > footer {
 	width: auto;
 	height: 300px;
 }
-
+#projPics {
+	width: auto;
+	height: 300px;
+	text-align: center;
+}
+#projTitle {
+	color: white;
+}
 #bottomAside {
 	width: 300px;
+	color: #120A8F;
+	font-family: Arial;
+	margin: 10px;
+	text-align: center;
 }
 #clearFilter {
 	font-family: "Comic Sans MS", cursive, sans-serif;
@@ -247,4 +374,163 @@ body > #mainDiv > footer {
 }
 #ttQuilt {
 	resize: both;
+}
+#ixoraText {
+	vertical-align: top;
+}
+#patternIxora {
+	float: left;
+	padding: 5px;
+}
+#patternHayley {
+	float: left;
+	padding: 5px;
+}
+#test {
+	width:100px;
+	height:40px;
+}
+#deleteBtn {
+	background-color: red;
+	color: white;
+	border-radius: 15px;
+	cursor: pointer;
+	margin: 10px;
+	height: 40px;
+	width: 100px;
+}
+#addBtn {
+	background-color: green;
+	color: white;
+	border-radius: 15px;
+	cursor: pointer;
+	margin: 10px;
+	height: 40px;
+	width: 100px;
+}
+#addBtn:disabled {
+	background-color: #C0C0C0;
+	color: #CCC;
+	border-radius: 15px;
+	cursor: unset;
+	margin: 10px;
+	height: 40px;
+	width: 100px;
+}
+#updateBtn {
+	background-color: black;
+	color: white;
+	border-radius: 15px;
+	cursor: pointer;
+	margin: 10px;
+	height: 40px;
+	width: 100px;
+}
+#bookTitle {
+	width: 400px;
+	height: 100%;
+}
+#addAuthor {
+	width: 400px;
+	height: 100%;
+}
+#addISBN {
+	width: 400px;
+	height: 100%;
+}
+#addSummary {
+	width: 400px;
+	height: 100%;
+}
+#editTitle {
+	width: 400px;
+}
+#editAuthor {
+	width: 400px;
+}
+#editISBN {
+	width: 400px;
+}
+#editSummary {
+	width: 400px;
+}
+#editChkName {
+	width: 400px;
+}
+#editChkEmail {
+	width: 400px;
+}
+#footer {
+	font-size: 15px;
+}
+#footerRight {
+	width: 100px;
+	height: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+#footerLeft {
+	width: 100px;
+	height: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+#footerLinkGroup {
+	width: 50%;
+}
+#facebook {
+	width: 40px;
+	height: 40px;
+}
+#reserveBook {
+	background-color: green;
+	color: white;
+	border-radius: 20px;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+#reserveBook:disabled {
+	background-color: #C0C0C0;
+	color: #CCC;
+	border-radius: 20px;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	cursor: unset;
+}
+#from {
+	width: 90%;
+	padding: 5px;
+	border: 3px solid #CCC;
+}
+#subject {
+	width: 90%;
+	padding: 5px;
+	border: 3px solid #CCC;
+}
+#content {
+	width: 90%;
+	padding: 5px;
+	border: 3px solid #CCC;
+}
+#send_email {
+	width: 80px;
+	height: 40px;
+	color: white;
+	background-color: #991414;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#submitBtn {
+	width: 200px;
+	height: 30px;
+	color: white;
+	background-color: #991414;
+	border-radius: 15px;
+	padding: 5px;
+	cursor: pointer;
 }

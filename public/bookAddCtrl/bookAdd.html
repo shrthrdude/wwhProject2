@@ -1,23 +1,24 @@
-<div>
-	<p>Add Book</p>
-	<form>
-		Title:
-		<input type="text" ng-model="book.book" name="title" value="" maxlength="100" />
+<div class="maint">
+	<p class="pageTitle">Add Book</p>
+	<form id="addBookForm">
+		<span>Title:</span><br>
+		<textarea id="bookTitle" rows="2" type="text" ng-click="enableAdd()" ng-model="book.book" name="title" value="" maxlength="100"></textarea>
 		<br />
-		Author:
-		<input type="text" ng-model="book.author" name="author" value="" maxlength="100" />
+		<span>Author:</span><br>
+		<textarea rows="2" id="addAuthor" type="text" ng-model="book.author" name="author" value="" maxlength="100"></textarea>
 		<br>
-		ISBN#:
-		<input type="text" ng-model="book.ISBN" name="isbn" value="" maxlength="30" />
+		<span>ISBN#:</span><br>
+		<textarea rows="1" id="addISBN"type="text" ng-model="book.ISBN" name="isbn" value="" maxlength="30"></textarea>
 		<br>
-		Summary:
-		<input type="text" ng-model="book.summary" name="summary" value=""
-		maxlength="500" />
+		<span>Summary:</span><br>
+		<textarea rows="4" id="addSummary" type="text" ng-model="book.summary" name="summary" value=""
+		maxlength="500"></textarea>
 		<br>
-		<input type="submit" ng-click="postBook(book)" value="Submit" />
+		<input id="addBtn" type="submit" ng-disabled="disableAdd" ng-click="postBook(book)" value="Submit" />
 	</form>
-	<button id="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
-	<button id="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
-	<button id="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
-	<button id="home" onclick="bookButtons('home')">Home</button>
+	<hr>
+	<button class="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
+	<button class="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
+	<button class="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
+	<button class="home" onclick="bookButtons('home')">Home</button>
 </div>

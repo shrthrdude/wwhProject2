@@ -1,0 +1,78 @@
+<h1>Memberships</h1>
+<form name="memberForm" id="membershipForm" class="memberForm">
+	<h3>Wasatch Woolpack Handspinners</h3>
+	<em>Founded 1998</em>
+	<br>
+	Membership Application/Renewal
+	<br><br>
+	<input ng-model="member.newReg" type="radio" name="memberRadio" value="New Regular">New, regular $25<br>
+	<input ng-model="member.renewReg" type="radio" name="memberRadio" value="Renew Regular">Renew, regular $25<br>
+	<input ng-model="member.newAssoc" type="radio" name="memberRadio" value="New Associate">New, associate $15<br>
+	<input ng-model="member.renewAssoc" type="radio" name="memberRadio" value="Renew Associate">Renew, associate $15<br>
+	<input ng-model="member.lifetime" type="radio" name="memberRadio" value="Lifetime">Lifetime $250<br>
+	<input ng-model="member.spindler" type="radio" name="memberRadio" value="Spindler">Spindler $30 or more<br>
+	<br>
+	Name:<br>
+	<input ng-model="member.name" class="memberLong" type="text"><br>
+	Address:<br>
+	<input ng-model="member.address" class="memberLong" type="text"><br>
+	City:<br>
+	<input ng-model="member.city" class="memberLong" type="text"><br>
+	State:<br>
+	<input ng-model="member.state" class="memberShort" type="text"><br>
+	Zip Code:<br>
+	<input ng-model="member.zip" class="memberShort" type="text"><br>
+	Home Phone:<br>
+	<input ng-model="member.homePhn" class="memberMedium" type="text"><br>
+	Work Phone:<br>
+	<input ng-model="member.workPhn" class="memberMedium" type="text"><br>
+	Cell Phone:<br>
+	<input ng-model="member.cellPhn" class="memberMedium" type="text"><br>
+	Email Address:<br>
+	<input ng-model="member.email" class="memberLong" type="text"><br>
+	OK to publish in our Directory?<br>
+	<input ng-model="member.pubYes" type="radio" name="memberPub" value="Yes">Yes<br>
+	<input ng-model="member.pubNo" type="radio" name="memberPub" value="No">No<br>
+	<br>
+	Would you like to join the email list?<br>
+	<input ng-model="member.listYes" type="radio" name="memberNews" value="Yes">Yes<br>
+	<input ng-model="member.listNo" type="radio" name="memberNews" value="No">No<br>
+	<input ng-model="member.listOn" type="radio" name="memberNews" value="alreadyon">Already on<br>
+	<br>
+	How would you prefer to receive the monthly newsletter?<br>
+	<input ng-model="member.newsMail" type="radio" name="memberGet" value="Mail">Mail<br>
+	<input ng-model="member.newsEmail" type="radio" name="memberGet" value="Email">Email - at the address above<br>
+	<input ng-model="member.newsBoth" type="radio" name="memberGet" value="Mail and Email">Both<br>
+	<br>
+	How long have you been spinning?<br>
+	<input ng-model="member.spinTime" class="memberShort" type="text"><br>
+	What is your favorite fiber to spin?<br>
+	<input ng-model="member.favFiber" class="memberLong" type="text"><br>
+	Do you own any fiber animals?<br>
+	<input ng-model="member.animalYesNo" class="memberShort" type="text"><br>
+	What are they?<br>
+	<input ng-model="member.animalTypes" class="memberLong" type="text"><br>
+	What spinning wheels and other fiber equipment do you have?<br>
+	<input ng-model="member.equip" class="memberLong" type="text"><br>
+	List some meeting topics that would be interest to you and/or new techniques you would like to learn:<br>
+	<input ng-model="member.topics" class="memberLong" type="text"><br>
+	What activities would you like to help with?<br>
+	<input ng-model="member.stateFair" type="checkbox" name="memberTopics" value="State Fair">State Fair<br>
+	<input ng-model="member.spinSat" type="checkbox" name="memberTopics" value="Spinning Saturday">Spinning Saturdays<br>
+	<input ng-model="member.fiberFest" type="checkbox" name="memberTopics" value="Fiber Festival">Fiber Festival<br>
+	<input ng-model="member.spinDemo" type="checkbox" name="memberTopics" value="Spinning Demonstration">Spinning Demonstration<br>
+	<input ng-model="member.memberDir" type="checkbox" name="memberTopics" value="Member Directory">Member Directory<br>
+	<input ng-model="member.teachSpin" type="checkbox" name="memberTopics" value="Teaching New Spinners">Teaching New Spinners<br>
+	<input ng-model="member.reteat" type="checkbox" name="memberTopics" value="Retreat">Retreat<br>
+	<input ng-model="member.memberLib" type="checkbox" name="memberTopics" value="Library">Library<br>
+	<input ng-model="member.workshops" type="checkbox" name="memberTopics" value="Workshops">Workshops<br>
+	<input ng-model="member.fundRaise" type="checkbox" name="memberTopics" value="Fund Raising">Fundraising<br>
+	<input ng-model="member.memberNews" type="checkbox" name="memberTopics" value="Newsletter Articles">Newsletter Articles<br>
+	<input ng-model="member.other" type="checkbox" name="memberTopics" value="Other">Other<br>
+	<br>
+	Describe other:<br>
+	<input ng-model="member.otherText" class="memberLong" type="text"><br>
+	<br>
+	<button id="submitBtn" ng-click="sendMemForm(member)">Submit Application</button><br>
+	<br>
+</form>

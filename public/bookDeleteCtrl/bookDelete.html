@@ -1,26 +1,28 @@
-<div>
-	<p>Delete Book</p>
-	<form>
-		Book ID: {{selected[0]._id}}
-		<br />
-		Title: {{selected[0].book}}
-		<br />
-		Author: {{selected[0].author}}
-		<br>
-		ISBN#: {{selected[0].ISBN}}
-		<br>
-		Summary: {{selected[0].summary}}
-		<br>
-		<input type="submit" ng-click="removeBook(selected[0]._id)" value="DELETE" />
+<div class="maint">
+	<p class="pageTitle">Delete Book</p>
+	<form id="deleteForm">
+		<div>
+			<span class="deleteText">Book ID: </span><br><span class="deleteData">{{selected[0]._id}}</span>
+			<br />
+			<span class="deleteText">Title  : </span><br><span class="deleteData">{{selected[0].book}}</span>
+			<br />
+			<span class="deleteText">Author : </span><br><span class="deleteData">{{selected[0].author}}</span>
+			<br>
+			<span class="deleteText">ISBN#: <span><br><span class="deleteData">{{selected[0].ISBN}}</span>
+			<br>
+			<span class="deleteText">Summary: </span><br><span class="deleteData">{{selected[0].summary}}</span>
+			<br>
+			<input id="deleteBtn" type="submit" ng-click="removeBook(selected[0]._id)" value="DELETE" />
+		</div>
+		<hr>
 		<strong><p>To delete a book use the filter to find the book you wish to delete, and then click on the book's row to select it.</p></strong>
 		<strong>Filter:</strong><input type="text" ng-model="filterOptions.filterText"/>
 		<button id="clearFilter" ng-click="clearFilter()">Clear Filter</button><br><br>
 	</form>
-
 	<div class="gridStyle" ng-grid="gridOptions"></div>
-
-	<button id="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
-	<button id="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
-	<button id="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
-	<button id="home" onclick="bookButtons('home')">Home</button>
+	<hr>
+	<button class="bookAdd" onclick="bookButtons('bookAdd')">Add Book</button>
+	<button class="bookUpdate" onclick="bookButtons('bookUpdate')">Edit Book</button>
+	<button class="bookDelete" onclick="bookButtons('bookDelete')">Delete Book</button>
+	<button class="home" onclick="bookButtons('home')">Home</button>
 </div>

@@ -24,11 +24,11 @@ app.service('bookService', function($http, $q){
   		});
 	};
 
-	this.updateBook = function(newBook){
+	this.updateBook = function(update){
 		return $http({
 		    method: 'PUT',
-		    url: 'http://localhost:2015/library/' + newBook._id,
-		    data: newBook
+		    url: 'http://localhost:2015/library/' + update._id,
+		    data: update
 	  	});
  	};
 
@@ -38,4 +38,21 @@ app.service('bookService', function($http, $q){
 		    url: 'http://localhost:2015/library/' + id
 	  	});
 	};
+
+	this.reserveBook = function(reserve){
+		return $http({
+		    method: 'PUT',
+		    url: 'http://localhost:2015/library/' + reserve._id,
+		    data: reserve
+	  	});
+ 	};
+
+ 	// this.checkoutBook = function(checkout){
+		// return $http({
+		//     method: 'PUT',
+		//     url: 'http://localhost:2015/library/' + checkout._id,
+		//     data: checkout
+	 //  	});
+ 	// };
 });
+

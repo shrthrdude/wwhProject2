@@ -85,6 +85,18 @@ app.config(function($routeProvider){
 			}
 		}
 	})
+	.when('/calendar',{
+		controller: 'calendarCtrl',
+		templateUrl: 'calendarCtrl/calendar.html'
+	})
+	.when('/member',{
+		controller: 'memberCtrl',
+		templateUrl: 'memberCtrl/member.html'
+	})
+	.when('/contact', {
+		controller: 'contactCtrl',
+		templateUrl: 'contactCtrl/contact.html'
+	})
 	.otherwise('/home', {
 		controller: 'mainCtrl',
 		templateUrl: 'mainCtrl/home.html'

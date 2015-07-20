@@ -1,0 +1,12 @@
+<body>
+    <form id="container">
+        <h1>Contact Us</h1>
+        <input id="from" ng-model="email.sendFrom" type="text" placeholder="Return email address (your email address)" />
+        <input id="subject" ng-model="email.subject" type="text" placeholder="Email Subject" />
+        <textarea id="content" ng-model="email.text" cols="40" rows="8" placeholder="Write your message here"></textarea>
+        <br>
+        <br>
+        <input type="submit" id="send_email" ng-click="sendMail(email)" value= "Send Email" />
+        <h4>We'd love to hear from you!</h4>
+    </form>
+</body>

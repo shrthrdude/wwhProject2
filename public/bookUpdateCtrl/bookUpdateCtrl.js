@@ -3,7 +3,7 @@ var app = angular.module('wwhApp');
 app.controller('bookUpdateCtrl', function($scope, bookService, booksRef){
     $scope.books = booksRef
 
-    function getBooks(){
+  function getBooks(){
   		bookService.getBooks().then(function(res){
     		$scope.books = res;
   		}, function(err){
@@ -11,17 +11,42 @@ app.controller('bookUpdateCtrl', function($scope, bookService, booksRef){
   		})
 	};
 
-	$scope.updateBook = function(book){
-	  bookService.updateBook(book).then(function(res){
+	$scope.updateBook = function(update){
+
+    for (var i = 0; i < document.editBookForm.chkReserve.length; i++) {
+        if (document.editBookForm.chkReserve[i].checked) {
+          reserveChosen = document.editBookForm.chkReserve[i].value
+        };
+    };
+
+    for (var i = 0; i < document.editBookForm.chkCheckout.length; i++) {
+        if (document.editBookForm.chkCheckout[i].checked) {
+          checkoutChosen = document.editBookForm.chkCheckout[i].value
+        };
+    };
+
+    // set reserve and checkout radio buttons
+    update.reserve = reserveChosen;
+    update.chkCheckout = checkoutChosen;
+
+    //update the book
+
+	  bookService.updateBook(update).then(function(res){
 	    getBooks();
 	  }, function(err){
 	    console.log(err)
-	  })
+	  });
+
+    // This flips the true/false fields back to correct display after update
+   
+    update.reserve = !reserveChosen;
+    update.chkCheckout = !checkoutChosen;
+  
 	};
 
 	$scope.filterOptions = {
-        filterText: ''
-  	};
+    filterText: ''
+  };
 
   $scope.clearFilter = function(){
     $scope.filterOptions.filterText = '';
@@ -31,7 +56,7 @@ app.controller('bookUpdateCtrl', function($scope, bookService, booksRef){
   $scope.gridOptions = { 
       data: 'books',
       afterSelectionChange: function (row, event) {
-        $scope.newBook = $scope.selected[0];
+        $scope.update = $scope.selected[0];
       },
       enableColumnResize: true,
       selectedItems: $scope.selected,
