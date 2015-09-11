@@ -59,10 +59,10 @@ app.config(function($routeProvider){
 		controller: 'patternCtrl',
 		templateUrl: 'patternCtrl/pattern.html'
 	})
-	.when('/tt', {
-		controller: 'thimbleCtrl',
-		templateUrl: 'thimbleCtrl/thimble.html'
-	})
+	// .when('/tt', {
+	// 	controller: 'thimbleCtrl',
+	// 	templateUrl: 'thimbleCtrl/thimble.html'
+	// })
 	.when('/bookAdd',{
 		controller: 'bookAddCtrl',
 		templateUrl: 'bookAddCtrl/bookAdd.html'

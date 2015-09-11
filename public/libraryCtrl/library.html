@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css">
 <link href="styles/style.css" rel="stylesheet">
 <div>
-	<div id="libHeader">
+	<div autofocus id="libHeader">
 		<h1>Riki Darling’s Library</h1>
 		<h5>At the Home of Julie Davies.</h5>
 		<h3>Memories of Riki Darling</h3>
@@ -44,7 +44,7 @@
 		<p>We miss Riki, our friend, and thank her for sharing her books and notes for the generations to come.</p>
 	</div>
 	<strong><p>To use the filter: Type a portion of the book title, the author, or ISBN number</p></strong>
-	<strong>Filter:</strong><input type="text" ng-model="filterOptions.filterText"/>
+	<strong>Filter:</strong><input type="text" autofocus ng-model="filterOptions.filterText"/>
 	<button id="clearFilter" ng-click="clearFilter()">Clear Filter</button><br><br>
 	<div ng-hide="show"></div>
 	<div id="book" ng-show="show">

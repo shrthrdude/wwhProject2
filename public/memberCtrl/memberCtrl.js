@@ -57,20 +57,8 @@ app.controller('memberCtrl', function($scope, $http){
         "What spinning wheel and other fiber equipment do you have: " + member.equip + "\n" + "\n" +
         "List some meeting topics that would be interest to you and/or new techniques you would like to learn: " + member.topics + "\n" + "\n" +
         "What activities would you like to help with: " + "\n" +
-        topicsChosen
-        // "  State Fair: " + member.stateFair + "\n" +
-        // "  Spinning Saturday: " + member.spinSat + "\n" +
-        // "  Fiber Festival: " + member.fiberFest + "\n" +
-        // "  Spinning Demo: " + member.spinDemo + "\n" +
-        // "  Member Directory: " + member.memberDir + "\n" +
-        // "  Teaching New Spinners: " + member.teachSpin + "\n" +
-        // "  Retreat: " + member.retreat + "\n" +
-        // "  Library: " + member.memberLib + "\n" +
-        // "  Workshops: " + member.workshops + "\n" +
-        // "  Fundraising: " + member.fundRaise + "\n" +
-        // "  Newsletter Articles: " + member.memberNews + "\n" +
-        // "  Other: " + member.fiberFest + "\n" + "\n" +
-        "  Describe other: " + member.otherText
+        topicsChosen + "\n" +
+        "Describe other: " + member.otherText
 
     	$http.post('/send', {
 			from: "New Membership Application", // sender address
@@ -78,6 +66,8 @@ app.controller('memberCtrl', function($scope, $http){
 		    subject: "New Membership Application", // Subject line
 		    text: memberInfo //plaintext 
 		});
+
+        alert("Membership form emailed!")
 
     	$('#membershipForm').trigger("reset");
     };

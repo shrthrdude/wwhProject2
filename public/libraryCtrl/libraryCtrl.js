@@ -25,26 +25,51 @@ app.controller('libraryCtrl', function($scope, $http, booksRef, bookService){
   };
 
   $scope.reserveBook = function(reserve){
-    reserve.reserve = true;
 
-    bookService.reserveBook(reserve).then(function(res){
-      getBooks();
-    }, function(err){
-      console.log(err)
-    });
+    // add prompt for password
+    var correctPwd = false;
 
-    var bookInfo = "Title: " + reserve.book + "\n" + 
-    "Author: " + reserve.author + "\n" +
-    "ISBN: " + reserve.ISBN + "\n" +
-    "Checkout Name: " + reserve.chkName + "\n" +
-    "Checkout Email: " + reserve.chkEmail
+    while (correctPwd === false) {
+      var libPwd = prompt("Please enter the library password","");
 
-    $http.post('/send', {
-      from: "Reservation", // sender address
-      to: "shrthrdude@yahoo.com", // list of receivers
-      subject: "New Reservation Request", // Subject line
-      text: bookInfo //plaintext 
-    });
+      if (libPwd === "spinning") {
+
+        reserve.reserve = true;
+
+        bookService.reserveBook(reserve).then(function(res){
+          getBooks();
+        }, function(err){
+          console.log(err)
+        });
+
+        var bookInfo = "Title: " + reserve.book + "\n" + 
+        "Author: " + reserve.author + "\n" +
+        "ISBN: " + reserve.ISBN + "\n" +
+        "Checkout Name: " + reserve.chkName + "\n" +
+        "Checkout Email: " + reserve.chkEmail
+
+        $http.post('/send', {
+          from: "Reservation", // sender address
+          to: "shrthrdude@yahoo.com", // list of receivers
+          subject: "New Reservation Request", // Subject line
+          text: bookInfo //plaintext 
+        });
+
+        correctPwd = true;
+
+      } else {
+        if (libPwd !== null){
+          if (confirm("Incorrect password entered." + "\n" + "Click 'OK' to try again." + "\n" + "Click 'Cancel' to quit.") === true) {
+            correctPwd = false;
+          } else {
+            correctPwd = true;
+          }
+        } else {
+          correctPwd = true;
+        }
+        
+      }
+    }
   };
 
   $scope.selected = [];

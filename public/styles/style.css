@@ -258,7 +258,6 @@ body > #mainDiv > footer {
 }
 .fb {
 	color: #120A8F;
-	text-align: center;
 }
 #slide {
 	width: 350px;
@@ -481,8 +480,8 @@ body > #mainDiv > footer {
 	width: 50%;
 }
 #facebook {
-	width: 40px;
-	height: 40px;
+	width: 200px;
+	height: 80px;
 }
 #reserveBook {
 	background-color: green;
